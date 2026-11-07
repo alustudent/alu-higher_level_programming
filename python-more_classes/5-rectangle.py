@@ -7,8 +7,10 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initializes the rectangle with a validated width and height."""
-        self.height = height
+        # Placeholder keeps height first in __dict__; width is validated first
+        self.__height = 0
         self.width = width
+        self.height = height
 
     @property
     def width(self):
