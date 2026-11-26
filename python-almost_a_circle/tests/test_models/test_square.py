@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Unittests for models/square.py."""
 import io
+import os
 import unittest
 from contextlib import redirect_stdout
 from models.base import Base
@@ -45,6 +46,44 @@ class TestSquare(unittest.TestCase):
             Square(1, "1")
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(1, 0, -1)
+
+    def test_invalid_size_x_y(self):
+        """Negative and non-integer size, x and y are rejected."""
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(-1)
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            Square(1, -1)
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            Square(1, 0, -3)
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 0, "2")
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 0, 1.5)
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, [1], 0)
+
+    def test_save_to_file_none(self):
+        """Square.save_to_file(None) writes an empty list."""
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        try:
+            Square.save_to_file(None)
+            with open("Square.json") as f:
+                self.assertEqual(f.read(), "[]")
+        finally:
+            if os.path.exists("Square.json"):
+                os.remove("Square.json")
+
+    def test_save_and_load(self):
+        """Squares survive a save and load round trip."""
+        try:
+            Square.save_to_file([Square(5), Square(7, 9, 1)])
+            loaded = Square.load_from_file()
+            self.assertEqual([str(s) for s in loaded],
+                             ["[Square] (1) 0/0 - 5", "[Square] (2) 9/1 - 7"])
+        finally:
+            if os.path.exists("Square.json"):
+                os.remove("Square.json")
 
     def test_size_setter(self):
         """The size setter updates and validates."""
