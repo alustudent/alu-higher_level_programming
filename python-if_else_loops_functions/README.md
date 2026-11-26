@@ -15,3 +15,6 @@
 | `10-add.py` | `add(a, b)`: returns `a + b` |
 | `11-pow.py` | `pow(a, b)`: returns `a` to the power of `b` |
 | `12-fizzbuzz.py` | `fizzbuzz()`: prints FizzBuzz from 1 to 100 |
+| `100-print_tebahpla.py` | Prints the alphabet in reverse, alternating case |
+| `101-remove_char_at.py` | `remove_char_at(str, n)`: copy of `str` without index `n` |
+| `102-magic_calculation.py` | Python version of the given bytecode |

@@ -16,4 +16,6 @@ Class inheritance, `super()`, `isinstance`/`issubclass`, and overriding built-in
 | `9-rectangle.py` | Adds `area()` and `__str__` |
 | `10-square.py` | `Square` that inherits `Rectangle` |
 | `11-square.py` | `Square` with its own `__str__` |
+| `100-my_int.py` | `MyInt`, an `int` with `==` and `!=` inverted |
+| `101-add_attribute.py` | Adds an attribute to an object if it can hold one |
 | `tests/` | Doctests for `1-my_list.py` and `7-base_geometry.py` |

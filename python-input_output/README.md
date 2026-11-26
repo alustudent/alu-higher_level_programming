@@ -17,3 +17,5 @@ Reading and writing files with `with`, JSON serialization, command line argument
 | `10-student.py` | `to_json()` filtered by a list of attribute names |
 | `11-student.py` | Adds `reload_from_json()` |
 | `12-pascal_triangle.py` | Returns Pascal's triangle of `n` rows |
+| `100-append_after.py` | Inserts a line after each line containing a string |
+| `101-stats.py` | Reads access logs on stdin and prints size and status code stats |

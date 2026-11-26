@@ -12,3 +12,6 @@
 | `7-edges.py` | Slices the first 3, last 2 and middle letters of a word |
 | `8-concat_edges.py` | Builds a new sentence from slices |
 | `9-easter_egg.py` | Prints the Zen of Python |
+| `100-write.py` | Prints a quote to stderr with `sys.stderr.write` and exits with 1 |
+| `101-compile` | Compiles the script in `$PYFILE` to `$PYFILEc` |
+| `102-magic_calculation.py` | Python version of the given bytecode |
