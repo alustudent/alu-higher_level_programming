@@ -15,3 +15,6 @@
 | `10-best_score.py` | Returns the key with the biggest value |
 | `11-multiply_list_map.py` | Multiplies all values of a list using `map` |
 | `12-roman_to_int.py` | Converts a Roman numeral to an integer |
+| `100-weight_average.py` | Returns the weighted average of `(score, weight)` tuples |
+| `101-square_matrix_map.py` | Squares all values of a matrix using `map` |
+| `102-complex_delete.py` | Deletes all keys with a given value from a dictionary |
